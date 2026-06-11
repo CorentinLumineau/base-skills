@@ -1,6 +1,7 @@
 ---
 name: scout
 description: Leave every file you touch slightly better than you found it — but never outside your current diff boundary. Produces an Improvement Record for every modified file.
+user-invocable: false
 ---
 
 # Scout

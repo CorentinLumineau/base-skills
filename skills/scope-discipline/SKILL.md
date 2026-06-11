@@ -1,6 +1,7 @@
 ---
 name: scope-discipline
 description: Before starting any task, write IS in scope / IS NOT in scope. Never fix out-of-scope discoveries. Rationalization trap table for common creep patterns.
+user-invocable: false
 ---
 
 # Scope Discipline

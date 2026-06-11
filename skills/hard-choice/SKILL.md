@@ -1,6 +1,7 @@
 ---
 name: hard-choice
 description: Evaluate the easy path (optimises for today) vs the hard path (optimises for the next two years) before committing to any solution. Produces a Decision Record.
+user-invocable: false
 ---
 
 # Hard Choice
@@ -27,10 +28,11 @@ Before acting, answer these. Stop if any is NO or UNKNOWN:
 - If I choose today's optimum, what does the rework cost 18 months from now?
 
 ## Artifact
-Decision Record — structured: Context / Options / Trade-offs / Decision / Rationale.
+Decision Record — lightweight, per-decision: Easy path (cost today, cost in 18 months) / Hard path (cost today, cost in 18 months) / Decision / One-sentence rationale.
 
-→ See skill-architecture-evidence for the canonical ADR format.
-→ See skill-root-cause for root cause diagnosis (used during incident-driven decisions).
+This is distinct from an ADR: a Decision Record is a quick two-path comparison produced inline.
+→ See [architecture-evidence](../architecture-evidence/SKILL.md) for full ADR format (durable design documents stored in the repo).
+→ See [root-cause](../root-cause/SKILL.md) for root cause diagnosis during incident-driven decisions.
 
 ## Watch out for
 - "We can always refactor later" → Later never comes without a documented decision that names the trigger

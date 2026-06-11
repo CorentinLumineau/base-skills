@@ -1,6 +1,7 @@
 ---
 name: naming
 description: "Every identifier must pass the explains-itself test. Banned patterns: data/info/manager/handler/utils/misc/helper. Booleans use is/has/can/shouldX. Functions are verb-first."
+user-invocable: false
 ---
 
 # Naming

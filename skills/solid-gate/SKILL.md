@@ -1,6 +1,7 @@
 ---
 name: solid-gate
 description: Verify SOLID compliance before writing any class, module, or function. Flags violations by severity (SRP/LSP=CRITICAL, OCP/DIP=HIGH, ISP=MEDIUM).
+user-invocable: false
 ---
 
 # SOLID Gate

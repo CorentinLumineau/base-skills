@@ -1,6 +1,7 @@
 ---
 name: anti-slop
 description: Flag AI-generated patterns that add no business value — empty handlers, no-op wrappers, single-consumer abstractions, copy-paste templates with only names changed. Apply the business value test.
+user-invocable: false
 ---
 
 # Anti-Slop
