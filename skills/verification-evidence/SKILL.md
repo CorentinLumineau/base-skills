@@ -1,6 +1,6 @@
 ---
 name: verification-evidence
-description: Never claim completion without observable evidence. Follow the 5-step gate: IDENTIFY → RUN → READ → VERIFY → CLAIM. Bans "should work", "probably", "likely".
+description: "Never claim completion without observable evidence. Follow the 5-step gate: IDENTIFY → RUN → READ → VERIFY → CLAIM. Bans \"should work\", \"probably\", \"likely\"."
 ---
 
 # Verification Evidence
