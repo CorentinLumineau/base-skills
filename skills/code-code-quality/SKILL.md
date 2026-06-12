@@ -6,10 +6,9 @@ description: >
   Enforces SOLID principles with violation severity levels, DRY/KISS/YAGNI rules,
   refactoring patterns, and code review practices.
   Do NOT use for API design patterns (use code-api-design) or error handling strategies (use code-error-handling).
+license: MIT
+compatibility: always-on knowledge skill
 allowed-tools: Read Grep Glob
-metadata:
-  license: MIT
-  compatibility: always-on knowledge skill
 ---
 
 <!-- ported from mercure-plugin/skills/code-code-quality/ -->
@@ -55,8 +54,7 @@ Includes SOLID principles, refactoring catalog, and code review practices.
 | Violation | Severity | Detection |
 |-----------|----------|-----------|
 | Speculative feature (not requested) | HIGH | "Just in case" code, unused parameters "for future use" |
-| Premature abstraction without 3+ consumers | MEDIUM | Interface for single implementation, optimization without measured bottleneck |
-| Premature abstraction (single consumer) | MEDIUM | Interface for single implementation, strategy for single strategy |
+| Premature abstraction (<3 consumers) | MEDIUM | Interface for single implementation, strategy for single strategy, optimization without measured bottleneck |
 
 ### Documentation Violations
 

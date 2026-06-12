@@ -1,4 +1,3 @@
-<!-- ported from mercure-plugin/skills/x-research/ -->
 ---
 name: x-research
 description: >
@@ -17,6 +16,8 @@ metadata:
   position: "2/3"
 allowed-tools: Read Grep Glob Bash
 ---
+
+<!-- ported from mercure-plugin/skills/x-research/ -->
 
 # x-research — Evidence Gathering (BRAINSTORM Phase 2/3)
 

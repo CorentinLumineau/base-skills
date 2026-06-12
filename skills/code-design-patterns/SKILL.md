@@ -7,10 +7,9 @@ description: >
   Covers creational, structural, and behavioral GoF patterns with selection guidance
   and anti-pattern detection.
   Do NOT use for code quality reviews (use code-code-quality) or API design (use code-api-design).
+license: MIT
+compatibility: always-on knowledge skill
 allowed-tools: Read Grep Glob
-metadata:
-  license: MIT
-  compatibility: always-on knowledge skill
 ---
 
 <!-- ported from mercure-plugin/skills/code-design-patterns/ -->

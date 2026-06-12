@@ -2,7 +2,7 @@
 # generate-system-prompt.sh — derives system-prompt.md from 17 behavioral SKILL.md files.
 # Offline-only (no network access). Exit 0 on success; 1 on drift/error.
 # Usage: bash scripts/generate-system-prompt.sh [--check]
-set -eu
+set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="${REPO}/system-prompt.md"
 TMP="$(mktemp)"; trap 'rm -f "$TMP"' EXIT

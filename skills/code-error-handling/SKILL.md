@@ -7,10 +7,9 @@ description: >
   Covers fail-fast patterns, meaningful error messages, Result types, error boundaries,
   logging strategy, and HTTP error response conventions.
   Do NOT use for debugging methodology or production incident response (use quality-debugging-performance).
+license: MIT
+compatibility: always-on knowledge skill
 allowed-tools: Read Grep Glob
-metadata:
-  license: MIT
-  compatibility: always-on knowledge skill
 ---
 
 <!-- ported from mercure-plugin/skills/code-error-handling/ -->

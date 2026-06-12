@@ -8,9 +8,11 @@ description: >
   or persuasion/enforcement psychology (use meta-persuasion-principles).
   (architectural decision, ADR, RFC, trade-off analysis, Pareto prioritization, architecture
   pattern, modular monolith, microservices, CQRS, build vs buy, priority matrix, quick wins)
+license: MIT
 compatibility: >
   Always-on knowledge skill. No special agent primitives required. Works with any agent
   that can reason about architecture and prioritization decisions.
+allowed-tools: Read Grep Glob
 ---
 
 <!-- ported from mercure-plugin/skills/meta-analysis-architecture/ -->

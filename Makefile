@@ -40,6 +40,6 @@ check-drift:
 # Manual fallback when skills-ref is not yet installed
 validate-manual:
 	@echo "Checking for non-spec frontmatter keys..."
-	@grep -r "user-invocable:" skills/ && (echo "FAIL: user-invocable key found" && exit 1) || echo "PASS: no user-invocable keys"
-	@grep -r "\*\*activation\*\*:" skills/ && (echo "FAIL: activation body line found" && exit 1) || echo "PASS: no activation body lines"
+	@if grep -rq "user-invocable:" skills/; then echo "FAIL: user-invocable key found"; exit 1; fi; echo "PASS: no user-invocable keys"
+	@if grep -rq "\*\*activation\*\*:" skills/; then echo "FAIL: activation body line found"; exit 1; fi; echo "PASS: no activation body lines"
 	@echo "All manual checks passed."

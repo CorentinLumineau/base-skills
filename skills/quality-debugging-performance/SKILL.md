@@ -5,11 +5,11 @@ description: >
   Covers systematic debugging methodology, profiling, caching, and database tuning.
   Do NOT use for test writing or coverage (use quality-testing) or production
   monitoring (use quality-observability).
+license: MIT
+compatibility: always-on
 allowed-tools: Read Grep Glob
 metadata:
   type: knowledge
-  license: MIT
-  compatibility: always-on
 ---
 
 <!-- ported from mercure-plugin/skills/quality-debugging-performance/ -->

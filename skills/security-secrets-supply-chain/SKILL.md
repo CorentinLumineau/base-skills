@@ -5,9 +5,11 @@ description: >
   Covers secrets rotation, dependency scanning, and container security. Do NOT use for
   application security vulnerabilities (use security-owasp) or authentication patterns
   (use security-identity-access).
+license: MIT
 compatibility: >
   Knowledge skill. No special agent primitives required. Works with any agent that can read
   and review code.
+allowed-tools: Read Grep Glob
 ---
 
 <!-- ported from mercure-plugin/skills/security-secrets-supply-chain/ -->

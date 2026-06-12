@@ -4,9 +4,11 @@ description: >
   Use when implementing authentication, authorization, or access control systems. Covers identity
   management, IAM patterns, and compliance requirements. Do NOT use for application-level
   vulnerabilities (use security-owasp) or supply chain security (use security-secrets-supply-chain).
+license: MIT
 compatibility: >
   Knowledge skill. No special agent primitives required. Works with any agent that can read
   and review code.
+allowed-tools: Read Grep Glob
 ---
 
 <!-- ported from mercure-plugin/skills/security-identity-access/ -->

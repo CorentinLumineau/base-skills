@@ -1,4 +1,3 @@
-<!-- ported from mercure-plugin/skills/x-design/ -->
 ---
 name: x-design
 description: >
@@ -19,6 +18,8 @@ metadata:
   approval_required: before-plan
 allowed-tools: Read Write Grep Glob Bash
 ---
+
+<!-- ported from mercure-plugin/skills/x-design/ -->
 
 # x-design — Architectural Decision (APEX Phase 2/6)
 

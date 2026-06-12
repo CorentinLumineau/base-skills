@@ -7,9 +7,11 @@ description: >
   or enforcing release automation conventions
   (conventional commit, commit message, commit format, semantic versioning from commits,
   feat commit, fix commit, BREAKING CHANGE, commit scope, changelog generation).
+license: MIT
 compatibility: >
   Always-on knowledge skill. No special agent primitives required. Works with any agent
   that can author or review git commit messages.
+allowed-tools: Read Grep Glob
 ---
 
 <!-- ported from mercure-plugin/skills/vcs-conventional-commits/ -->

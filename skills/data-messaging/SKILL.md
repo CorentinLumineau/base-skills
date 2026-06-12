@@ -4,11 +4,11 @@ description: >
   Use when implementing message queues or event-driven architectures. Covers
   patterns for decoupled, scalable systems with async communication. Do NOT use
   for database design (use data-data-persistence) or CI/CD pipelines.
+license: MIT
+compatibility: always-on
 allowed-tools: Read Grep Glob
 metadata:
   type: knowledge
-  license: MIT
-  compatibility: always-on
 ---
 
 <!-- ported from mercure-plugin/skills/data-messaging/ -->

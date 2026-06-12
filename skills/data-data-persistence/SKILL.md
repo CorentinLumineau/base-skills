@@ -5,11 +5,11 @@ description: >
   storage. Covers relational design, NoSQL patterns, caching strategies, and
   storage optimization. Do NOT use for message queue patterns (use data-messaging)
   or application-level caching debug (use quality-debugging-performance).
+license: MIT
+compatibility: always-on
 allowed-tools: Read Grep Glob
 metadata:
   type: knowledge
-  license: MIT
-  compatibility: always-on
 ---
 
 <!-- ported from mercure-plugin/skills/data-data-persistence/ -->

@@ -6,10 +6,9 @@ description: >
   Covers resource naming, HTTP methods, response codes, versioning, pagination, error formats,
   GraphQL schema best practices, and SDK/code-generation patterns.
   Do NOT use for code quality reviews (use code-code-quality) or design patterns (use code-design-patterns).
+license: MIT
+compatibility: always-on knowledge skill
 allowed-tools: Read Grep Glob
-metadata:
-  license: MIT
-  compatibility: always-on knowledge skill
 ---
 
 <!-- ported from mercure-plugin/skills/code-api-design/ -->

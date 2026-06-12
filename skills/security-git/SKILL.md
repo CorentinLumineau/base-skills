@@ -4,9 +4,11 @@ description: >
   Use when hardening Git repositories or configuring security controls. Covers GPG signing,
   secret scanning, hook security, and Git best practices. Do NOT use for application security
   vulnerabilities (use security-owasp) or authentication patterns (use security-identity-access).
+license: MIT
 compatibility: >
   Knowledge skill. No special agent primitives required. Works with any agent that can read
   and review code.
+allowed-tools: Read Grep Glob
 ---
 
 <!-- ported from mercure-plugin/skills/security-git/ -->

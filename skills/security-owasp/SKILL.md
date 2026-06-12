@@ -9,9 +9,11 @@ description: >
   (OWASP Top 10, security audit, injection vulnerability, XSS, SQL injection,
   broken authentication, input validation, CORS, security headers, rate limiting,
   API security, web application security)
+license: MIT
 compatibility: >
   Knowledge skill. No special agent primitives required. Works with any agent that can read
   and review code.
+allowed-tools: Read Grep Glob
 ---
 
 <!-- merged from: security-owasp + security-secure-coding -->

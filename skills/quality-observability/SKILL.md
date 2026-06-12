@@ -5,11 +5,11 @@ description: >
   systems. Covers observability patterns with logs, metrics, traces, and k6 load
   testing. Do NOT use for debugging specific issues (use quality-debugging-performance)
   or writing tests (use quality-testing).
+license: MIT
+compatibility: always-on
 allowed-tools: Read Grep Glob
 metadata:
   type: knowledge
-  license: MIT
-  compatibility: always-on
 ---
 
 <!-- ported from mercure-plugin/skills/quality-observability/ -->

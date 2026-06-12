@@ -113,12 +113,11 @@ Token estimates are approximate; actual token counts depend on the agent's token
 **When to use**: Security audits, authentication implementation, secrets management, or
 hardening a repository's Git configuration.
 
-**Skills** (5 skills, ~5,500 tokens):
+**Skills** (4 skills, ~4,400 tokens):
 
 | Skill |
 |-------|
 | [security-owasp](../skills/security-owasp/SKILL.md) |
-| [security-secure-coding](../skills/security-secure-coding/SKILL.md) — _use `security-owasp` for full OWASP_ |
 | [security-identity-access](../skills/security-identity-access/SKILL.md) |
 | [security-secrets-supply-chain](../skills/security-secrets-supply-chain/SKILL.md) |
 | [security-git](../skills/security-git/SKILL.md) |

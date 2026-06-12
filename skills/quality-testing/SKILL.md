@@ -5,11 +5,11 @@ description: >
   testing pyramid, TDD patterns, and quality gate checks for comprehensive
   validation. Do NOT use for debugging (use quality-debugging-performance) or
   observability setup (use quality-observability).
+license: MIT
+compatibility: always-on
 allowed-tools: Read Grep Glob
 metadata:
   type: knowledge
-  license: MIT
-  compatibility: always-on
 ---
 
 <!-- ported from mercure-plugin/skills/quality-testing/ -->

@@ -1,4 +1,3 @@
-<!-- ported from mercure-plugin/skills/x-troubleshoot/ -->
 ---
 name: x-troubleshoot
 description: >
@@ -17,6 +16,8 @@ metadata:
   position: "1/2"
 allowed-tools: Read Grep Glob Bash
 ---
+
+<!-- ported from mercure-plugin/skills/x-troubleshoot/ -->
 
 # x-troubleshoot — Hypothesis-Driven Diagnosis (DEBUG Phase 1/2)
 

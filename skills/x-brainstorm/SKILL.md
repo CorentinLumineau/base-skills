@@ -1,4 +1,3 @@
-<!-- ported from mercure-plugin/skills/x-brainstorm/ -->
 ---
 name: x-brainstorm
 description: >
@@ -17,6 +16,8 @@ metadata:
   position: "1/3"
 allowed-tools: Read Write Grep Glob Bash
 ---
+
+<!-- ported from mercure-plugin/skills/x-brainstorm/ -->
 
 # x-brainstorm — Structured Exploration (BRAINSTORM Phase 1/3)
 
