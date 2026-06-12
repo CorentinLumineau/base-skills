@@ -62,9 +62,11 @@ Skills are installed to `.agents/skills/<name>/SKILL.md` per the agentskills.io 
 | Sourcegraph Cody | Copy `system-prompt.md` into system prompt configuration | On-demand skills: paste SKILL.md into context |
 | Any agent with system-prompt support | Copy `system-prompt.md` into system instructions | Universal; all 17 L1 principles apply automatically |
 
-> **Migration note for Claude Code users**: Previous installs may have relied on `rules/quality-principles.md` as an
-> auto-loaded rule file. That auto-load mechanism has been removed. To keep the same behaviour,
-> copy `system-prompt.md` into your Claude Code project's `CLAUDE.md` or system instructions.
+> **Migration note for Claude Code users**: Previous installs may have relied on an auto-loaded
+> `rules/quality-principles.md`. That file has been removed — "rules" are a Claude-Code-only
+> mechanism with no agentskills.io equivalent, and its content is now owned by the 17 always-on
+> L1 skills. To keep the same behaviour, copy `system-prompt.md` into your Claude Code project's
+> `CLAUDE.md` or system instructions.
 
 ## Skills
 
@@ -204,8 +206,8 @@ system-prompt.md                 — condensed ~600-token block for any agent (p
 quick-reference.md               — one-table lookup with self-check questions
 CHECKSUMS.md                     — SHA-256 fingerprints for all SKILL.md + system-prompt.md
 SECURITY.md                      — vulnerability disclosure policy (72h ACK SLA)
-CLAUDE.md                        — Claude Code convenience pointer (Claude Code only)
-rules/quality-principles.md      — optional reading material (Claude Code only; not auto-loaded)
+AGENTS.md                        — agent-agnostic entry point (agents.md / skills.sh convention)
+CLAUDE.md → AGENTS.md            — symlink so Claude Code reads the same entry doc (no CC-specific content)
 references/bundles.md            — curated skill bundles for 50–75% token reduction per session
 references/resync-process.md     — SOP for propagating mercure changes to this replica
 references/chain-overview.md     — all 4 workflow chains with gate positions (APEX/ONESHOT/DEBUG/BRAINSTORM)
