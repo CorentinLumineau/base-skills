@@ -9,7 +9,7 @@ for focused work.
 Install a bundle with pinned syntax so you always get verified content:
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill <name1> --skill <name2> ...
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill <name1> --skill <name2> ...
 ```
 
 Or copy the relevant `skills/<name>/SKILL.md` files directly into your agent's context.
@@ -36,7 +36,7 @@ any domain-specific guidance.
 | [naming](../skills/naming/SKILL.md) | All identifiers must pass the explains-itself test; ban generic names |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill review-gate --skill dry-kiss-yagni --skill naming
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill review-gate --skill dry-kiss-yagni --skill naming
 ```
 
 ---
@@ -56,7 +56,7 @@ pre-implementation design work.
 | [pareto-focus](../skills/pareto-focus/SKILL.md) | Identify and protect the 20% of effort that delivers 80% of value |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill design-challenge --skill hard-choice --skill architecture-evidence --skill pareto-focus
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill design-challenge --skill hard-choice --skill architecture-evidence --skill pareto-focus
 ```
 
 ---
@@ -77,7 +77,7 @@ to a codebase. The most frequently used bundle.
 | [solid-gate](../skills/solid-gate/SKILL.md) | Check every class/module/function against all five SOLID principles |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill verification-evidence --skill scout --skill scope-discipline --skill anti-slop --skill solid-gate
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill verification-evidence --skill scout --skill scope-discipline --skill anti-slop --skill solid-gate
 ```
 
 ---
@@ -96,7 +96,7 @@ gates.
 | [approval-gate](../skills/approval-gate/SKILL.md) | Confirm before >3 files, irreversible actions, or ambiguity |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill review-gate --skill root-cause --skill approval-gate
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill review-gate --skill root-cause --skill approval-gate
 ```
 
 ---
@@ -123,7 +123,7 @@ hardening a repository's Git configuration.
 | [security-git](../skills/security-git/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill security-owasp --skill security-identity-access --skill security-secrets-supply-chain --skill security-git
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill security-owasp --skill security-identity-access --skill security-secrets-supply-chain --skill security-git
 ```
 
 ---
@@ -142,7 +142,7 @@ error handling.
 | [code-error-handling](../skills/code-error-handling/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill code-code-quality --skill code-design-patterns --skill code-error-handling
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill code-code-quality --skill code-design-patterns --skill code-error-handling
 ```
 
 ---
@@ -161,7 +161,7 @@ implementing observability.
 | [quality-observability](../skills/quality-observability/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill quality-testing --skill quality-debugging-performance --skill quality-observability
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill quality-testing --skill quality-debugging-performance --skill quality-observability
 ```
 
 ---
@@ -180,7 +180,7 @@ infrastructure.
 | [delivery-infrastructure](../skills/delivery-infrastructure/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill delivery-ci-cd-delivery --skill delivery-release-git --skill delivery-infrastructure
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill delivery-ci-cd-delivery --skill delivery-release-git --skill delivery-infrastructure
 ```
 
 ---
@@ -197,7 +197,7 @@ npx skills add CorentinLumineau/base-skills@v0.2.0 --skill delivery-ci-cd-delive
 | [data-messaging](../skills/data-messaging/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill data-data-persistence --skill data-messaging
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill data-data-persistence --skill data-messaging
 ```
 
 ---
@@ -216,7 +216,7 @@ contract design.
 | [code-api-design](../skills/code-api-design/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill meta-analysis-architecture --skill meta-rearchitect --skill code-api-design
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill meta-analysis-architecture --skill meta-rearchitect --skill code-api-design
 ```
 
 ---
@@ -233,7 +233,7 @@ npx skills add CorentinLumineau/base-skills@v0.2.0 --skill meta-analysis-archite
 | [operations-sre-operations](../skills/operations-sre-operations/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill operations-incident-response --skill operations-sre-operations
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill operations-incident-response --skill operations-sre-operations
 ```
 
 ---
@@ -252,7 +252,7 @@ across forges.
 | [vcs-forge-operations](../skills/vcs-forge-operations/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill vcs-git-workflows --skill vcs-conventional-commits --skill vcs-forge-operations
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill vcs-git-workflows --skill vcs-conventional-commits --skill vcs-forge-operations
 ```
 
 ---
@@ -268,7 +268,7 @@ npx skills add CorentinLumineau/base-skills@v0.2.0 --skill vcs-git-workflows --s
 | [compliance-audit-compliance](../skills/compliance-audit-compliance/SKILL.md) |
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.0 --skill compliance-audit-compliance
+npx skills add CorentinLumineau/base-skills@v0.2.1 --skill compliance-audit-compliance
 ```
 
 ---
