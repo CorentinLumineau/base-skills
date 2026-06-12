@@ -1,11 +1,16 @@
 ---
 name: base-skills
-description: 23 always-on behavioural principles for AI coding agents — Pareto focus, SOLID gate, review severity, root cause analysis, naming discipline, and more.
+description: 49 skills for AI coding agents — 17 always-on behavioural principles plus an L2 knowledge layer covering security, architecture, testing, delivery, and more.
 ---
 
 # Base Skills
 
-23 **always-on behavioural principles** for AI coding agents. Each skill defines concrete rules, decision gates, and artifacts. Applied automatically — no invocation needed.
+**49 skills** for AI coding agents in two tiers:
+
+- **L1 — Behavioural skills (17)**: Always-on principles (Pareto focus, SOLID gate, review severity, root cause analysis, naming discipline). Applied automatically — no invocation needed.
+- **L2 — Knowledge skills (26)**: On-demand domain expertise loaded when the agent needs deep procedural guidance (security audits, API design, testing strategies, CI/CD, data persistence, and more).
+
+Plus **6 workflow orchestration skills** (x-auto, x-analyze, x-fix, x-implement, x-plan, x-review) for structured APEX/ONESHOT/DEBUG/BRAINSTORM workflows.
 
 ## Install
 
@@ -52,9 +57,11 @@ claude mcp install ./base-skills
 
 ### Any other agent
 
-Copy `system-prompt.md` into your agent's system instructions. It produces the same behavioural effect as all 23 skills in under 500 tokens.
+Copy `system-prompt.md` into your agent's system instructions. It produces the same behavioural effect as all 17 L1 behavioural skills in under 500 tokens.
 
 ## Skills
+
+### L1 — Behavioural Skills (17, always-on)
 
 | # | Skill | Summary |
 |---|-------|---------|
@@ -75,12 +82,92 @@ Copy `system-prompt.md` into your agent's system instructions. It produces the s
 | 15 | [approval-gate](skills/approval-gate/SKILL.md) | Confirm before >3 files, irreversible actions, architecture decisions, or ambiguity |
 | 16 | [error-handling](skills/error-handling/SKILL.md) | Classify failures before acting: transient/permanent/corruption with retry limits |
 | 17 | [test-discipline](skills/test-discipline/SKILL.md) | TDD mandate: write the failing test before any implementation code |
+
+### Workflow Skills (6, on-demand)
+
+| # | Skill | Summary |
+|---|-------|---------|
 | 18 | [x-auto](skills/x-auto/SKILL.md) | Entry point and workflow classifier for APEX, ONESHOT, DEBUG, and BRAINSTORM chains |
 | 19 | [x-analyze](skills/x-analyze/SKILL.md) | Assess a codebase across quality, security, performance, and architecture domains |
 | 20 | [x-fix](skills/x-fix/SKILL.md) | Quick targeted fix for an identified bug, followed by a commit approval gate |
 | 21 | [x-implement](skills/x-implement/SKILL.md) | Implement planned changes following test-driven development (TDD) |
 | 22 | [x-plan](skills/x-plan/SKILL.md) | Create an implementation plan with task breakdown and acceptance criteria |
 | 23 | [x-review](skills/x-review/SKILL.md) | Post-implementation quality gate; blocks on CRITICAL and HIGH findings |
+
+### L2 — Knowledge Skills (26, on-demand)
+
+Load a knowledge skill when the agent needs deep domain expertise for a specific task.
+
+**Code quality**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 24 | [code-api-design](skills/code-api-design/SKILL.md) | REST/GraphQL API design: resource naming, versioning, pagination, SDK patterns |
+| 25 | [code-code-quality](skills/code-code-quality/SKILL.md) | SOLID, DRY, KISS, YAGNI enforcement with refactoring patterns and code review practices |
+| 26 | [code-design-patterns](skills/code-design-patterns/SKILL.md) | Gang of Four creational, structural, and behavioral patterns with selection guidance |
+| 27 | [code-error-handling](skills/code-error-handling/SKILL.md) | Fail-fast patterns, try-catch practices, async errors, error monitoring |
+
+**Security**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 28 | [security-git](skills/security-git/SKILL.md) | GPG signing, secret scanning, hook security, and Git repository hardening |
+| 29 | [security-identity-access](skills/security-identity-access/SKILL.md) | IAM, RBAC/ABAC, OAuth flows, JWT patterns, MFA implementation |
+| 30 | [security-owasp](skills/security-owasp/SKILL.md) | OWASP Top 10 2021 detection/prevention + input validation, API security, security checklist |
+| 31 | [security-secrets-supply-chain](skills/security-secrets-supply-chain/SKILL.md) | Secrets rotation, dependency scanning, container security, SLSA levels |
+
+**Quality**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 32 | [quality-debugging-performance](skills/quality-debugging-performance/SKILL.md) | Systematic debugging methodology, profiling, caching, database optimization |
+| 33 | [quality-observability](skills/quality-observability/SKILL.md) | Logs, metrics, traces, k6 load testing, OpenTelemetry, structured logging |
+| 34 | [quality-testing](skills/quality-testing/SKILL.md) | Testing pyramid, TDD patterns, coverage gates, mocking, eval-driven development |
+
+**Data**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 35 | [data-data-persistence](skills/data-data-persistence/SKILL.md) | Relational/NoSQL schema design, caching, migrations, PostgreSQL, Redis, MongoDB |
+| 36 | [data-messaging](skills/data-messaging/SKILL.md) | Message queues, event-driven patterns, Kafka, RabbitMQ |
+
+**Delivery**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 37 | [delivery-ci-cd-delivery](skills/delivery-ci-cd-delivery/SKILL.md) | CI/CD pipelines, deployment strategies, GitHub Actions, GitLab CI, rollback |
+| 38 | [delivery-infrastructure](skills/delivery-infrastructure/SKILL.md) | IaC, Docker, Kubernetes, Terraform, feature flags |
+| 39 | [delivery-release-git](skills/delivery-release-git/SKILL.md) | Semantic versioning, changelog generation, release automation, branching strategy |
+
+**Architecture & Meta**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 40 | [meta-analysis-architecture](skills/meta-analysis-architecture/SKILL.md) | Pareto analysis, ADRs, trade-off frameworks, architecture pattern selection |
+| 41 | [meta-persuasion-principles](skills/meta-persuasion-principles/SKILL.md) | Influence psychology, anti-rationalization, enforcement gate design |
+| 42 | [meta-rearchitect](skills/meta-rearchitect/SKILL.md) | Coupling audits, SOLID at scale, architectural anti-patterns, refactoring decision tree |
+
+**Operations**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 43 | [operations-incident-response](skills/operations-incident-response/SKILL.md) | Incident lifecycle, severity classification, communication templates, post-mortems |
+| 44 | [operations-sre-operations](skills/operations-sre-operations/SKILL.md) | SLOs, error budgets, alerting, SRE practices, disaster recovery |
+
+**VCS & Compliance**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 45 | [vcs-conventional-commits](skills/vcs-conventional-commits/SKILL.md) | Conventional Commits spec: types, scopes, breaking changes, changelog generation |
+| 46 | [vcs-forge-operations](skills/vcs-forge-operations/SKILL.md) | Cross-forge PR/issue operations (GitHub and Gitea CLI equivalences) |
+| 47 | [vcs-git-workflows](skills/vcs-git-workflows/SKILL.md) | Conflict resolution, rebase strategies, history navigation, advanced Git |
+| 48 | [compliance-audit-compliance](skills/compliance-audit-compliance/SKILL.md) | SOC 2, GDPR, HIPAA, PCI DSS — compliance controls, audit trails, evidence collection |
+
+**Diagrams**
+
+| # | Skill | Summary |
+|---|-------|---------|
+| 49 | [diagram-mermaid](skills/diagram-mermaid/SKILL.md) | Mermaid diagram syntax: flowcharts, sequence diagrams, entity-relationship, Gantt |
 
 ## Files
 
@@ -98,14 +185,14 @@ Base Skills operates on two tiers optimised for different use cases.
 
 **Tier 1 — Always-On Principal Block (`system-prompt.md`)**: A compact, provider-agnostic block of approximately 600 tokens that encodes all 17 behavioral principles as direct first-person rules. Copy this file into any agent's system instructions and the principles apply automatically to every task — no invocation, no skill loading, no configuration. This is the primary delivery vehicle for teams that need consistent behavioral governance across Claude Code, OpenAI, Gemini, local models, or any other agent runtime.
 
-**Tier 2 — On-Demand Behavioral Skills (`skills/*/SKILL.md`)**: The full corpus of 23 skills totalling approximately 8,500 tokens. Each skill includes Why, Always, Never, Gate, and Artifact sections with detailed decision criteria, rationalization trap tables, worked examples, and cross-skill references. Load a specific SKILL.md only when the agent needs to reason about the principle in depth — for example, load `skills/architecture-evidence/SKILL.md` when the agent is creating an ADR, or `skills/review-gate/SKILL.md` during a structured code review.
+**Tier 2 — On-Demand Skills (`skills/*/SKILL.md`)**: The full corpus of 49 skills. Each L1 skill includes Why, Always, Never, Gate, and Artifact sections. Each L2 knowledge skill includes domain checklists, pattern tables, detection rules, and worked examples. Load a specific SKILL.md only when the agent needs deep domain guidance — for example, load `security-owasp` during a security audit, `quality-testing` when setting up a test strategy, or `data-data-persistence` when designing a schema.
 
-**Why the two-tier model matters for token economy**: Loading all 23 skills on every task would cost approximately 8,500 tokens per context window — roughly 14× the always-on block. For routine tasks (write a function, fix a bug, refactor a class), the always-on block provides sufficient behavioral governance at ~600 tokens. The full corpus is reserved for tasks that require deep procedural guidance. Over hundreds of tasks, the compression from ~8,500 to ~600 tokens saves significant inference cost while maintaining the full behavioral contract.
+**Why the two-tier model matters for token economy**: Loading all 49 skills on every task is unnecessary and expensive. The always-on block provides behavioral governance at ~600 tokens for routine tasks. The full corpus is reserved for tasks that require deep procedural guidance. Load the relevant L2 knowledge skill only when domain expertise is needed.
 
 **When to use which tier**:
 - Always: inject `system-prompt.md` into system instructions once; never remove it mid-session
-- On-demand: reference a specific SKILL.md when the task explicitly invokes a workflow (ADR creation → `architecture-evidence`; code review → `review-gate`; bug fix → `root-cause`)
-- Never: load all 23 SKILL.md files unless you are building a comprehensive agent that operates across all domains simultaneously
+- On-demand: reference a specific SKILL.md when the task needs domain expertise (security audit → `security-owasp`; API design → `code-api-design`; ADR creation → `architecture-evidence`; code review → `review-gate`)
+- Never: load all 49 SKILL.md files unless building a comprehensive multi-domain agent
 
 **Sync governance**: `system-prompt.md` is derived from the 17 behavioral SKILL.md files using `make generate`. Run `make check-drift` at any time to verify the file has not drifted from its generated baseline.
 

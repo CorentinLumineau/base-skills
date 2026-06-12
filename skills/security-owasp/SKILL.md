@@ -1,26 +1,27 @@
 ---
 name: security-owasp
 description: >
-  Detect and prevent OWASP Top 10 2021 web application vulnerabilities during code review,
-  security audit, or implementation. Covers injection, broken authentication, XSS, SSRF,
-  insecure design, and misconfiguration with detection patterns and prevention strategies.
-  Use when performing a security audit, reviewing authentication flows, validating input handling,
-  or assessing API endpoints for security risk
-  (OWASP Top 10, security audit, injection vulnerability, XSS attack, SQL injection,
-  broken authentication, CWE, web application security, security review, vulnerability assessment,
-  SSRF, insecure design, security misconfiguration).
+  Use when assessing or preventing web application security vulnerabilities, or writing
+  security-sensitive code. Covers OWASP Top 10 2021 attack patterns, detection rules, input
+  validation, and API security best practices. Do NOT use for identity/access management
+  (use security-identity-access), git hardening (use security-git), or supply chain security
+  (use security-secrets-supply-chain).
+  (OWASP Top 10, security audit, injection vulnerability, XSS, SQL injection,
+  broken authentication, input validation, CORS, security headers, rate limiting,
+  API security, web application security)
 compatibility: >
   Knowledge skill. No special agent primitives required. Works with any agent that can read
   and review code.
 ---
 
-<!-- ported from mercure-plugin/skills/security-owasp/ -->
+<!-- merged from: security-owasp + security-secure-coding -->
 
-# OWASP Top 10 — Security Audit
+# OWASP Top 10 — Security Audit & Secure Coding
 
 **triggers**: Security audit, reviewing authentication or input handling code, assessing API
-endpoints, code review of web application components, or any request containing "OWASP",
-"security vulnerability", "injection", "XSS", "CWE", or "SSRF"
+endpoints, writing security-sensitive code, code review of web application components, or any
+request containing "OWASP", "security vulnerability", "injection", "XSS", "CWE", "SSRF",
+"input validation", "CORS", "rate limiting", or "security headers"
 
 ## Why
 
@@ -28,6 +29,16 @@ The OWASP Top 10 accounts for the majority of exploited web vulnerabilities. Add
 systematically during development costs far less than remediating a breach. Each category maps
 to concrete detection patterns and countermeasures that can be applied during code review
 without specialized security tooling.
+
+## 80/20 Focus
+
+Master these areas to prevent 80% of web application vulnerabilities:
+
+| Area | Impact | Key Prevention |
+|------|--------|----------------|
+| Injection (A03) | 94% of apps tested | Parameterized queries, input validation |
+| Broken Access Control (A01) | 34% prevalence | Default deny, ownership checks |
+| API abuse | Top attack vector | Rate limiting, CORS, schema validation |
 
 ## OWASP Top 10 2021 — Quick Reference
 
@@ -209,6 +220,115 @@ without specialized security tooling.
 
 ---
 
+## Input Validation
+
+### Validation Strategy
+
+| Strategy | Purpose | Example |
+|----------|---------|---------|
+| Type validation | Ensure correct data types | Integer for ID, string for name |
+| Format validation | Regex for structured data | Email, phone, URL patterns |
+| Whitelist validation | Only allow known-good values | Enum fields, allowed statuses |
+| Length validation | Prevent overflow and DoS | Max 255 for email, max 100 for name |
+| Parameterized queries | Prevent SQL injection | `WHERE id = ?` with params |
+
+### Whitelist vs Blacklist
+
+| Approach | Recommendation | Reason |
+|----------|----------------|--------|
+| Whitelist | **Recommended** | Only allows known-good values |
+| Blacklist | **Avoid** | Easy to miss dangerous values |
+
+**Rule**: Validate first, sanitize as needed. Never trust client input.
+
+### SQL / NoSQL Injection Prevention
+
+SQL — parameterized query, ORM (`User.findById(id)`), prepared statements. Never string
+concatenation with user input.
+
+NoSQL — validate types (ensure strings, not objects), reject MongoDB operators (`$ne`, `$gt`),
+sanitize query objects.
+
+---
+
+## API Security
+
+### CORS Configuration
+
+```
+Allowed Origins:   https://app.example.com (specific, not *)
+Allowed Methods:   GET, POST, PUT, DELETE
+Allowed Headers:   Authorization, Content-Type
+Expose Headers:    X-RateLimit-Remaining
+Max Age:           3600 (cache preflight for 1h)
+Credentials:       true (if cookies needed)
+```
+
+Rules:
+- Never use `Access-Control-Allow-Origin: *` with credentials
+- Whitelist specific origins; restrict methods to what the API actually uses
+
+### Rate Limiting
+
+| Algorithm | Behavior | Best For |
+|-----------|----------|----------|
+| Fixed window | N requests per time window | Simple, most APIs |
+| Sliding window | Smoothed fixed window | Avoiding burst at window edges |
+| Token bucket | Allows controlled bursts | APIs with burst traffic |
+| Leaky bucket | Constant output rate | Strict rate enforcement |
+
+Standard headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`, `Retry-After`
+
+### Security Headers
+
+Every response should include:
+
+```
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Cache-Control: no-store
+Content-Security-Policy: default-src 'none'
+```
+
+### API Input Validation
+
+Validate all input at the API boundary:
+- Validate type, format, length, and pattern
+- Reject unknown fields (deny by default)
+- Sanitize output (prevent XSS in error messages)
+- Use allowlists over denylists
+- Use OpenAPI schema validation
+
+---
+
+## Security Checklist
+
+### OWASP Essentials
+- [ ] Default deny for access control
+- [ ] Parameterized queries for all database operations
+- [ ] HTTPS enforced with TLS 1.3
+- [ ] Strong password hashing (bcrypt 12+ / Argon2)
+- [ ] Security headers configured
+- [ ] No secrets in code or logs
+
+### Input Validation
+- [ ] All user input validated before use
+- [ ] Type validation for all fields
+- [ ] Whitelist validation for enums/options
+- [ ] Length limits on strings and arrays
+- [ ] Output encoding for HTML display
+- [ ] File upload validation (type, size, name)
+
+### API Security
+- [ ] Rate limiting on sensitive endpoints
+- [ ] CORS restricted to specific origins
+- [ ] Schema validation at API boundary
+- [ ] Authentication on all non-public endpoints
+- [ ] Security headers on all responses
+
+---
+
 ## Reporting Format
 
 For each finding from a security audit, report:
@@ -242,3 +362,14 @@ Before completing a security audit:
 
 Security audit summary: "{N} findings — CRITICAL: {N}, HIGH: {N}, MEDIUM: {N}.
 Categories covered: {list}. CRITICAL findings require fix before merge."
+
+## When to Load References
+
+- **For injection examples**: See `references/injection-prevention.md`
+- **For security headers detail**: See `references/security-headers.md`
+- **For SQL injection patterns**: See `references/sql-injection.md`
+- **For XSS prevention**: See `references/xss-prevention.md`
+- **For file upload security**: See `references/file-upload.md`
+- **For rate limiting detail**: See `references/rate-limiting.md`
+- **For CORS security**: See `references/cors-security.md`
+- **For API auth patterns**: See `references/api-auth-patterns.md`
