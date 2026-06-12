@@ -1,4 +1,4 @@
-.PHONY: validate validate-manual
+.PHONY: validate validate-manual generate check-drift
 
 # Conformance gate: validate all 23 skills against the agentskills.io spec
 # Requires: npm install -g skills-ref
@@ -27,6 +27,15 @@ validate:
 		skills/x-implement \
 		skills/x-plan \
 		skills/x-review
+
+# Derive system-prompt.md from the 17 behavioral SKILL.md files (offline only)
+generate:
+	bash scripts/generate-system-prompt.sh
+
+# Fail with exit code 1 if system-prompt.md has drifted from the generated output
+# Fallback: git diff --exit-code if diff is unavailable
+check-drift:
+	bash scripts/generate-system-prompt.sh --check
 
 # Manual fallback when skills-ref is not yet installed
 validate-manual:
