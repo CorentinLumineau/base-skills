@@ -1,12 +1,10 @@
 ---
 name: scout
 description: Leave every file you touch slightly better than you found it — but never outside your current diff boundary. Produces an Improvement Record for every modified file.
-user-invocable: false
 ---
 
 # Scout
 
-**activation**: always-on
 **triggers**: Every time you modify a file, add a file, or delete a file
 
 ## Why

@@ -5,7 +5,6 @@ description: "TDD mandate: write the failing test before any implementation code
 
 # Test Discipline
 
-**activation**: always-on
 **triggers**: Any implementation task, bug fix, or code change that adds or modifies behavior
 
 ## Why

@@ -5,7 +5,6 @@ description: "Classify failures before acting. Transient=retry max 2x; Permanent
 
 # Error Handling
 
-**activation**: always-on
 **triggers**: Any tool failure, file operation error, command failure, API error, or network timeout
 
 ## Why

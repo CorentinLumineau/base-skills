@@ -1,12 +1,10 @@
 ---
 name: dry-kiss-yagni
 description: Enforce DRY (duplication thresholds), KISS (3-consumer rule, max 3 nesting levels), and YAGNI (no speculative code, no premature optimisation).
-user-invocable: false
 ---
 
 # DRY KISS YAGNI
 
-**activation**: always-on
 **triggers**: Any code being written, reviewed, or refactored
 
 ## Why

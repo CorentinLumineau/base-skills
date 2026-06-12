@@ -1,12 +1,10 @@
 ---
 name: hard-choice
 description: Evaluate the easy path (optimises for today) vs the hard path (optimises for the next two years) before committing to any solution. Produces a Decision Record.
-user-invocable: false
 ---
 
 # Hard Choice
 
-**activation**: always-on
 **triggers**: Committing to a solution approach, choosing between alternatives, making a technical or design decision
 
 ## Why

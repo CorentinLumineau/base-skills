@@ -1,12 +1,10 @@
 ---
 name: design-challenge
 description: Never accept a technical proposal without adversarial evaluation. Steelman every alternative before rejecting. Triggers mandatory critical review after 3 unchallenged acceptances.
-user-invocable: false
 ---
 
 # Design Challenge
 
-**activation**: always-on
 **triggers**: Technical proposals, architecture decisions, design discussions, code review comments that introduce a design pattern or approach
 
 ## Why

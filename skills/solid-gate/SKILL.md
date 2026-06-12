@@ -1,12 +1,10 @@
 ---
 name: solid-gate
 description: Verify SOLID compliance before writing any class, module, or function. Flags violations by severity (SRP/LSP=CRITICAL, OCP/DIP=HIGH, ISP=MEDIUM).
-user-invocable: false
 ---
 
 # SOLID Gate
 
-**activation**: always-on
 **triggers**: Before writing any new class, module, function, or interface; before modifying an existing one beyond a single method
 
 ## Why

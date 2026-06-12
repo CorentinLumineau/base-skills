@@ -1,12 +1,10 @@
 ---
 name: pareto-focus
 description: Identify and protect the 20% of effort that delivers 80% of value. Apply before any multi-step task, feature, or decision to prevent scope creep and busywork.
-user-invocable: false
 ---
 
 # Pareto Focus
 
-**activation**: always-on
 **triggers**: Any task, feature request, bug fix, or decision that takes more than one step
 
 ## Why

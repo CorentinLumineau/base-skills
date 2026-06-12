@@ -1,12 +1,10 @@
 ---
 name: architecture-evidence
 description: Every significant design decision needs an ADR with context, at least 2 alternatives (including the rejected option's strongest argument), trade-offs, coupling assessment, decision, and rationale.
-user-invocable: false
 ---
 
 # Architecture Evidence
 
-**activation**: always-on
 **triggers**: Every significant design decision — choosing between frameworks, data stores, module boundaries, API styles, deployment strategies, or any decision with lasting cost
 
 ## Why

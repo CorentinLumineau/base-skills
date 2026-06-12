@@ -1,12 +1,10 @@
 ---
 name: review-gate
 description: Canonical severity model for code review — CRITICAL (blocks merge), HIGH (blocks without user exception), MEDIUM (surface), LOW (note). Zero CRITICAL to pass. Rationalization trap table included.
-user-invocable: false
 ---
 
 # Review Gate
 
-**activation**: always-on
 **triggers**: Every code review, pull request review, architectural review, or design review
 
 ## Why

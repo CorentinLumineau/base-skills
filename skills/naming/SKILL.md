@@ -1,12 +1,10 @@
 ---
 name: naming
 description: "Every identifier must pass the explains-itself test. Banned patterns: data/info/manager/handler/utils/misc/helper. Booleans use is/has/can/shouldX. Functions are verb-first."
-user-invocable: false
 ---
 
 # Naming
 
-**activation**: always-on
 **triggers**: Every new identifier: classes, functions, variables, files, modules, routes, database columns, environment variables, configuration keys
 
 ## Why

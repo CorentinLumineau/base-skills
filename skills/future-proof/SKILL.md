@@ -1,12 +1,10 @@
 ---
 name: future-proof
 description: Make the 2-year maintenance cost visible before every decision. Apply the next-developer test and change-cost test (>3 files per requirement change = smell).
-user-invocable: false
 ---
 
 # Future Proof
 
-**activation**: always-on
 **triggers**: Every decision that adds, modifies, or removes code, configuration, or infrastructure
 
 ## Why
