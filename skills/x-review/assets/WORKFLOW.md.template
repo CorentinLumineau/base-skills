@@ -1,0 +1,16 @@
+# WORKFLOW.md — written by x-review (APEX phase 5/6)
+# Copy this file to WORKFLOW.md at repo root; fill started, summary, and prev_phases.
+workflow: apex
+current_phase: review
+status: complete
+prev_phases:
+  - phase: analyze
+    summary: "# paste analyze summary here"
+  - phase: plan
+    summary: "# paste plan summary here"
+  - phase: implement
+    summary: "# paste implement summary here"
+approval_required_before: ~
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<e.g.: '6 files reviewed, 0 CRITICAL, 0 HIGH, 2 MEDIUM — APPROVED'>"

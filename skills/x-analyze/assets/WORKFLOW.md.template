@@ -1,0 +1,10 @@
+# WORKFLOW.md — written by x-analyze (APEX phase 1/6)
+# Copy this file to WORKFLOW.md at repo root; fill started and summary fields.
+workflow: apex
+current_phase: analyze
+status: in_progress
+prev_phases: []
+approval_required_before: design
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<one-sentence outcome, e.g.: '12 findings; 2 CRITICAL in auth; HIGH N+1 in orders'>"

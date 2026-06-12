@@ -1,0 +1,14 @@
+# WORKFLOW.md — written by x-plan (APEX phase 3/6)
+# Copy this file to WORKFLOW.md at repo root; fill started, summary, and prev_phases.
+workflow: apex
+current_phase: plan
+status: in_progress
+prev_phases:
+  - phase: analyze
+    summary: "# paste analyze summary here"
+  - phase: design
+    summary: "# paste design summary here"
+approval_required_before: implement
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<e.g.: '8 tasks; 4 files; 1 HIGH risk: async migration'>"
