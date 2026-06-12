@@ -1,12 +1,10 @@
 ---
 name: scope-discipline
 description: Before starting any task, write IS in scope / IS NOT in scope. Never fix out-of-scope discoveries. Rationalization trap table for common creep patterns.
-user-invocable: false
 ---
 
 # Scope Discipline
 
-**activation**: always-on
 **triggers**: Before starting any task, before branching, before writing the first line of code, and whenever tempted to add "just one more thing"
 
 ## Why

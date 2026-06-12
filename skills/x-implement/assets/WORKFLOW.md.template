@@ -1,0 +1,14 @@
+# WORKFLOW.md — written by x-implement (APEX phase 4/6)
+# Copy this file to WORKFLOW.md at repo root; fill started, summary, and prev_phases.
+workflow: apex
+current_phase: implement
+status: complete
+prev_phases:
+  - phase: analyze
+    summary: "# paste analyze summary here"
+  - phase: plan
+    summary: "# paste plan summary here"
+approval_required_before: ~
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<e.g.: '5 tasks, 8 files changed, all tests green'>"

@@ -1,0 +1,10 @@
+# WORKFLOW.md — written by x-troubleshoot (DEBUG phase 1/2)
+# Copy this file to WORKFLOW.md at repo root; fill started and summary fields.
+workflow: debug
+current_phase: troubleshoot
+status: complete
+prev_phases: []
+approval_required_before: null
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<e.g.: 'Root cause: null pointer in auth/session.ts:42; fix is simple (1 file)'>"

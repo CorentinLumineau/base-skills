@@ -1,0 +1,12 @@
+# WORKFLOW.md — written by x-research (BRAINSTORM phase 2/3)
+# Copy this file to WORKFLOW.md at repo root; fill started, summary, and prev_phases.
+workflow: brainstorm
+current_phase: research
+status: complete
+prev_phases:
+  - phase: brainstorm
+    summary: "# paste brainstorm summary here"
+approval_required_before: null
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<e.g.: '3 questions answered; 1 open question for brainstorm; 2 files cited'>"

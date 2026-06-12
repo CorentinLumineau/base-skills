@@ -1,12 +1,10 @@
 ---
 name: root-cause
 description: Before any bug fix, apply the 5 Whys to distinguish symptom from root cause. Document the root cause chain explicitly before writing any fix. Workaround escape hatch for infeasible root cause fixes.
-user-invocable: false
 ---
 
 # Root Cause
 
-**activation**: always-on
 **triggers**: Any bug fix, incident response, test failure, or unexpected behaviour
 
 ## Why

@@ -1,0 +1,10 @@
+# WORKFLOW.md — written by x-fix (ONESHOT phase 1/2)
+# Copy this file to WORKFLOW.md at repo root; fill started and summary fields.
+workflow: oneshot
+current_phase: fix
+status: complete
+prev_phases: []
+approval_required_before: commit
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<e.g.: '1 file changed, regression test added, full suite green'>"

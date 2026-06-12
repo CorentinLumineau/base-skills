@@ -1,0 +1,8 @@
+# WORKFLOW.md — created by x-auto
+# Copy this file to WORKFLOW.md at repo root; fill workflow and started fields.
+workflow: # apex | oneshot | debug | brainstorm
+current_phase: entry
+status: in_progress
+prev_phases: []
+approval_required_before: null
+started: # ISO date e.g. 2026-06-12

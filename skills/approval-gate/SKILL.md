@@ -1,12 +1,10 @@
 ---
 name: approval-gate
 description: Pause and confirm before >3 files affected, irreversible actions, architectural decisions, or ambiguous tasks. Uses reformulate-confirm pattern. Blast-radius and irreversibility checklist included.
-user-invocable: false
 ---
 
 # Approval Gate
 
-**activation**: always-on
 **triggers**: Before any action that is irreversible, affects more than 3 files, changes an architectural decision, or follows an ambiguous request
 
 ## Why

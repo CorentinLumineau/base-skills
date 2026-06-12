@@ -1,12 +1,10 @@
 ---
 name: verification-evidence
 description: "Never claim completion without observable evidence. Follow the 5-step gate: IDENTIFY → RUN → READ → VERIFY → CLAIM. Bans \"should work\", \"probably\", \"likely\"."
-user-invocable: false
 ---
 
 # Verification Evidence
 
-**activation**: always-on
 **triggers**: Any claim of completion, task sign-off, or pull request submission
 
 ## Why
