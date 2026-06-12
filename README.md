@@ -1,16 +1,15 @@
 ---
 name: base-skills
-description: 49 skills for AI coding agents — 17 always-on behavioural principles plus an L2 knowledge layer covering security, architecture, testing, delivery, and more.
+description: 53 skills for AI coding agents — 17 always-on behavioural principles, an L2 knowledge layer covering security, architecture, testing, delivery, and more, plus 10 workflow orchestration skills.
 ---
 
 # Base Skills
 
-**49 skills** for AI coding agents in two tiers:
+**53 skills** for AI coding agents in three tiers:
 
 - **L1 — Behavioural skills (17)**: Always-on principles (Pareto focus, SOLID gate, review severity, root cause analysis, naming discipline). Applied automatically — no invocation needed.
 - **L2 — Knowledge skills (26)**: On-demand domain expertise loaded when the agent needs deep procedural guidance (security audits, API design, testing strategies, CI/CD, data persistence, and more).
-
-Plus **6 workflow orchestration skills** (x-auto, x-analyze, x-fix, x-implement, x-plan, x-review) for structured APEX/ONESHOT/DEBUG/BRAINSTORM workflows.
+- **L3 — Workflow orchestration skills (10)**: Structured APEX/ONESHOT/DEBUG/BRAINSTORM workflows (x-auto, x-analyze, x-design, x-plan, x-implement, x-review, x-fix, x-troubleshoot, x-brainstorm, x-research).
 
 ## Install
 
@@ -83,16 +82,20 @@ Copy `system-prompt.md` into your agent's system instructions. It produces the s
 | 16 | [error-handling](skills/error-handling/SKILL.md) | Classify failures before acting: transient/permanent/corruption with retry limits |
 | 17 | [test-discipline](skills/test-discipline/SKILL.md) | TDD mandate: write the failing test before any implementation code |
 
-### Workflow Skills (6, on-demand)
+### L3 — Workflow Orchestration Skills (10, on-demand)
 
-| # | Skill | Summary |
-|---|-------|---------|
-| 18 | [x-auto](skills/x-auto/SKILL.md) | Entry point and workflow classifier for APEX, ONESHOT, DEBUG, and BRAINSTORM chains |
-| 19 | [x-analyze](skills/x-analyze/SKILL.md) | Assess a codebase across quality, security, performance, and architecture domains |
-| 20 | [x-fix](skills/x-fix/SKILL.md) | Quick targeted fix for an identified bug, followed by a commit approval gate |
-| 21 | [x-implement](skills/x-implement/SKILL.md) | Implement planned changes following test-driven development (TDD) |
-| 22 | [x-plan](skills/x-plan/SKILL.md) | Create an implementation plan with task breakdown and acceptance criteria |
-| 23 | [x-review](skills/x-review/SKILL.md) | Post-implementation quality gate; blocks on CRITICAL and HIGH findings |
+| # | Skill | Chain | Summary |
+|---|-------|-------|---------|
+| 18 | [x-auto](skills/x-auto/SKILL.md) | All | Entry point and workflow classifier for APEX, ONESHOT, DEBUG, and BRAINSTORM chains |
+| 19 | [x-analyze](skills/x-analyze/SKILL.md) | APEX 1/6 | Assess a codebase across quality, security, performance, and architecture domains |
+| 20 | [x-design](skills/x-design/SKILL.md) | APEX 2/6 | Architectural decision records (ADR) with trade-off analysis; gates before planning |
+| 21 | [x-plan](skills/x-plan/SKILL.md) | APEX 3/6 | Create an implementation plan with task breakdown and acceptance criteria |
+| 22 | [x-implement](skills/x-implement/SKILL.md) | APEX 4/6 | Implement planned changes following test-driven development (TDD) |
+| 23 | [x-review](skills/x-review/SKILL.md) | APEX 5/6 | Post-implementation quality gate; blocks on CRITICAL and HIGH findings |
+| 24 | [x-fix](skills/x-fix/SKILL.md) | ONESHOT 1/2 | Quick targeted fix for an identified bug, followed by a commit approval gate |
+| 25 | [x-troubleshoot](skills/x-troubleshoot/SKILL.md) | DEBUG 1/2 | Hypothesis-driven diagnosis for errors with unknown root causes |
+| 26 | [x-brainstorm](skills/x-brainstorm/SKILL.md) | BRAINSTORM 1/3 | Structured exploration of a vague idea from multiple angles |
+| 27 | [x-research](skills/x-research/SKILL.md) | BRAINSTORM 2/3 | Evidence-based investigation answering specific questions before design |
 
 ### L2 — Knowledge Skills (26, on-demand)
 
@@ -185,9 +188,9 @@ Base Skills operates on two tiers optimised for different use cases.
 
 **Tier 1 — Always-On Principal Block (`system-prompt.md`)**: A compact, provider-agnostic block of approximately 600 tokens that encodes all 17 behavioral principles as direct first-person rules. Copy this file into any agent's system instructions and the principles apply automatically to every task — no invocation, no skill loading, no configuration. This is the primary delivery vehicle for teams that need consistent behavioral governance across Claude Code, OpenAI, Gemini, local models, or any other agent runtime.
 
-**Tier 2 — On-Demand Skills (`skills/*/SKILL.md`)**: The full corpus of 49 skills. Each L1 skill includes Why, Always, Never, Gate, and Artifact sections. Each L2 knowledge skill includes domain checklists, pattern tables, detection rules, and worked examples. Load a specific SKILL.md only when the agent needs deep domain guidance — for example, load `security-owasp` during a security audit, `quality-testing` when setting up a test strategy, or `data-data-persistence` when designing a schema.
+**Tier 2 — On-Demand Skills (`skills/*/SKILL.md`)**: The full corpus of 53 skills. Each L1 skill includes Why, Always, Never, Gate, and Artifact sections. Each L2 knowledge skill includes domain checklists, pattern tables, detection rules, and worked examples. Each L3 workflow skill includes a phase checklist, output template, WORKFLOW.md template, and (where required) an approval gate. Load a specific SKILL.md only when the agent needs deep domain guidance — for example, load `security-owasp` during a security audit, `quality-testing` when setting up a test strategy, or `x-design` when making an architectural decision.
 
-**Why the two-tier model matters for token economy**: Loading all 49 skills on every task is unnecessary and expensive. The always-on block provides behavioral governance at ~600 tokens for routine tasks. The full corpus is reserved for tasks that require deep procedural guidance. Load the relevant L2 knowledge skill only when domain expertise is needed.
+**Why the two-tier model matters for token economy**: Loading all 53 skills on every task is unnecessary and expensive. The always-on block provides behavioral governance at ~600 tokens for routine tasks. The full corpus is reserved for tasks that require deep procedural guidance. Load the relevant skill only when the domain expertise or workflow structure is needed.
 
 **When to use which tier**:
 - Always: inject `system-prompt.md` into system instructions once; never remove it mid-session

@@ -1,0 +1,12 @@
+# WORKFLOW.md — written by x-design (APEX phase 2/6)
+# Copy this file to WORKFLOW.md at repo root; fill started, summary, and prev_phases.
+workflow: apex
+current_phase: design
+status: complete
+prev_phases:
+  - phase: analyze
+    summary: "# paste analyze summary here"
+approval_required_before: plan
+started: # ISO date e.g. 2026-06-12
+# --- fill below ---
+# summary: "<e.g.: 'ADR-042 written; chose repository pattern; 3 alternatives evaluated'>"
