@@ -13,6 +13,7 @@ metadata:
   workflow: apex
   phase: implement
   position: "4/6"
+license: MIT
 ---
 
 # x-implement — TDD Implementation (APEX Phase 4/6)

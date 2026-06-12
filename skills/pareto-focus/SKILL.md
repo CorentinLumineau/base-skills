@@ -1,6 +1,7 @@
 ---
 name: pareto-focus
 description: Identify and protect the 20% of effort that delivers 80% of value. Apply before any multi-step task, feature, or decision to prevent scope creep and busywork.
+license: MIT
 ---
 
 # Pareto Focus

@@ -14,6 +14,7 @@ metadata:
   workflow: all
   phase: entry
   position: "0/0"
+license: MIT
 ---
 
 # x-auto — Workflow Entry Point

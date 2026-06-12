@@ -1,6 +1,7 @@
 ---
 name: hard-choice
 description: Evaluate the easy path (optimises for today) vs the hard path (optimises for the next two years) before committing to any solution. Produces a Decision Record.
+license: MIT
 ---
 
 # Hard Choice

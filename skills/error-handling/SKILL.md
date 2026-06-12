@@ -1,6 +1,7 @@
 ---
 name: error-handling
 description: "Classify failures before acting. Transient=retry max 2x; Permanent=report+alternatives; Corruption=stop immediately. Bans silent failures, infinite retries, and data loss on errors."
+license: MIT
 ---
 
 # Error Handling

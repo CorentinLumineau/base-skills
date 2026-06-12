@@ -14,6 +14,7 @@ metadata:
   phase: fix
   position: "1/2"
   approval_required: before-commit
+license: MIT
 ---
 
 # x-fix — Targeted Fix (ONESHOT Phase 1/2)

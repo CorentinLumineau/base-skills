@@ -1,6 +1,7 @@
 ---
 name: test-discipline
 description: "TDD mandate: write the failing test before any implementation code. Testing pyramid: 70% unit / 20% integration / 10% E2E. Never claim completion without all tests passing."
+license: MIT
 ---
 
 # Test Discipline

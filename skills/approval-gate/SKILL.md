@@ -1,6 +1,7 @@
 ---
 name: approval-gate
 description: Pause and confirm before >3 files affected, irreversible actions, architectural decisions, or ambiguous tasks. Uses reformulate-confirm pattern. Blast-radius and irreversibility checklist included.
+license: MIT
 ---
 
 # Approval Gate

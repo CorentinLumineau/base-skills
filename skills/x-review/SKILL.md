@@ -13,6 +13,7 @@ metadata:
   workflow: apex
   phase: review
   position: "5/6"
+license: MIT
 ---
 
 # x-review — Quality Gate (APEX Phase 5/6)

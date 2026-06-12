@@ -1,6 +1,7 @@
 ---
 name: architecture-evidence
 description: Every significant design decision needs an ADR with context, at least 2 alternatives (including the rejected option's strongest argument), trade-offs, coupling assessment, decision, and rationale.
+license: MIT
 ---
 
 # Architecture Evidence

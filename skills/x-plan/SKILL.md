@@ -14,6 +14,7 @@ metadata:
   phase: plan
   position: "3/6"
   approval_required: before-implement
+license: MIT
 ---
 
 # x-plan — Implementation Plan (APEX Phase 3/6)

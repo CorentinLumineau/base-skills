@@ -14,6 +14,7 @@ metadata:
   phase: analyze
   position: "1/6"
   approval_required: before-design
+license: MIT
 ---
 
 # x-analyze — Codebase Assessment (APEX Phase 1/6)
