@@ -13,20 +13,34 @@ description: 53 skills for AI coding agents — 17 always-on behavioural princip
 
 ## Install
 
-### agentskills.io (primary — any compatible agent)
+### Pinned install (recommended)
 
-Install all skills:
+Pin to a verified release to prevent unvetted updates from reaching your agents:
+
+```bash
+npx skills add CorentinLumineau/base-skills@v0.2.0
+```
+
+Individual skills at a pinned version:
+
+```bash
+npx skills add CorentinLumineau/base-skills@v0.2.0 --skill pareto-focus
+npx skills add CorentinLumineau/base-skills@v0.2.0 --skill review-gate --skill naming --skill solid-gate
+```
+
+Verify integrity after install (see `CHECKSUMS.md`):
+
+```bash
+sha256sum --check CHECKSUMS.md   # Linux
+shasum -a 256 -c CHECKSUMS.md    # macOS
+```
+
+### agentskills.io (any compatible agent)
+
+Install all skills (unpinned — use pinned form above for production):
 
 ```bash
 npx skills add CorentinLumineau/base-skills
-```
-
-Individual skills:
-
-```bash
-npx skills add CorentinLumineau/base-skills --skill pareto-focus
-npx skills add CorentinLumineau/base-skills --skill review-gate --skill naming --skill solid-gate
-npx skills add CorentinLumineau/base-skills --skill '*'
 ```
 
 List without installing:
@@ -37,26 +51,20 @@ npx skills add CorentinLumineau/base-skills --list
 
 Skills are installed to `.agents/skills/<name>/SKILL.md` per the agentskills.io spec.
 
-### Claude Code (one client)
+### Client Compatibility
 
-```bash
-claude mcp install CorentinLumineau/base-skills
-```
+| Client | Install method | Notes |
+|--------|---------------|-------|
+| Claude Code | `npx skills add CorentinLumineau/base-skills@v0.2.0` or copy `system-prompt.md` into `CLAUDE.md` | Full skill loading supported |
+| Cursor | Copy `system-prompt.md` into system instructions | On-demand skills: paste SKILL.md into context |
+| Windsurf | Copy `system-prompt.md` into system instructions | On-demand skills: paste SKILL.md into context |
+| GitHub Copilot | Copy `system-prompt.md` into `.github/copilot-instructions.md` | On-demand skills: reference SKILL.md manually |
+| Sourcegraph Cody | Copy `system-prompt.md` into system prompt configuration | On-demand skills: paste SKILL.md into context |
+| Any agent with system-prompt support | Copy `system-prompt.md` into system instructions | Universal; all 17 L1 principles apply automatically |
 
-Or clone and install locally:
-
-```bash
-git clone https://github.com/CorentinLumineau/base-skills
-claude mcp install ./base-skills
-```
-
-> **Migration note**: Previous installs may have relied on `rules/quality-principles.md` as an
+> **Migration note for Claude Code users**: Previous installs may have relied on `rules/quality-principles.md` as an
 > auto-loaded rule file. That auto-load mechanism has been removed. To keep the same behaviour,
 > copy `system-prompt.md` into your Claude Code project's `CLAUDE.md` or system instructions.
-
-### Any other agent
-
-Copy `system-prompt.md` into your agent's system instructions. It produces the same behavioural effect as all 17 L1 behavioural skills in under 500 tokens.
 
 ## Skills
 
@@ -172,14 +180,36 @@ Load a knowledge skill when the agent needs deep domain expertise for a specific
 |---|-------|---------|
 | 49 | [diagram-mermaid](skills/diagram-mermaid/SKILL.md) | Mermaid diagram syntax: flowcharts, sequence diagrams, entity-relationship, Gantt |
 
+## Replica Relationship
+
+**mercure** (in the `ccsetup` repository) is the canonical SSOT: a full-featured Claude Code
+plugin with 70+ skills, 11 agents, 5 MCP servers, hooks, and CC-specific primitives
+(`TaskCreate`, MCP resources, worktree isolation, slash commands).
+
+**base-skills** is a portable replica derived from mercure. All CC-specific primitives have
+been abstracted away so every skill works on any agent that supports system-prompt injection
+or the agentskills.io spec. The replica receives behavioral and knowledge content from
+mercure but never carries implementation details that only function inside Claude Code.
+
+When mercure skills are updated, the process for propagating changes is documented in
+[`references/resync-process.md`](references/resync-process.md). That file covers three
+sync types (new knowledge skill port, behavioral update, workflow update), the H8
+cross-reference cleanup checklist, and the version bump policy.
+
 ## Files
 
 ```
-skills/<name>/SKILL.md   — full skill definition (agentskills.io spec-conformant)
-system-prompt.md         — condensed ~500-token block for any agent (primary portability artifact)
-quick-reference.md       — one-table lookup with self-check questions (primary portability artifact)
-CLAUDE.md                — Claude Code convenience pointer (Claude Code only)
-rules/quality-principles.md — optional reading material (Claude Code only; not auto-loaded)
+skills/<name>/SKILL.md           — full skill definition (agentskills.io spec-conformant)
+system-prompt.md                 — condensed ~600-token block for any agent (primary portability artifact)
+quick-reference.md               — one-table lookup with self-check questions
+CHECKSUMS.md                     — SHA-256 fingerprints for all SKILL.md + system-prompt.md
+SECURITY.md                      — vulnerability disclosure policy (72h ACK SLA)
+CLAUDE.md                        — Claude Code convenience pointer (Claude Code only)
+rules/quality-principles.md      — optional reading material (Claude Code only; not auto-loaded)
+references/bundles.md            — curated skill bundles for 50–75% token reduction per session
+references/resync-process.md     — SOP for propagating mercure changes to this replica
+references/chain-overview.md     — all 4 workflow chains with gate positions (APEX/ONESHOT/DEBUG/BRAINSTORM)
+references/workflow-state.md     — WORKFLOW.md state schema for cross-phase context passing
 ```
 
 ## Always-On Delivery
@@ -195,7 +225,7 @@ Base Skills operates on two tiers optimised for different use cases.
 **When to use which tier**:
 - Always: inject `system-prompt.md` into system instructions once; never remove it mid-session
 - On-demand: reference a specific SKILL.md when the task needs domain expertise (security audit → `security-owasp`; API design → `code-api-design`; ADR creation → `architecture-evidence`; code review → `review-gate`)
-- Never: load all 49 SKILL.md files unless building a comprehensive multi-domain agent
+- Never: load all 53 SKILL.md files unless building a comprehensive multi-domain agent
 
 **Sync governance**: `system-prompt.md` is derived from the 17 behavioral SKILL.md files using `make generate`. Run `make check-drift` at any time to verify the file has not drifted from its generated baseline.
 
@@ -236,7 +266,7 @@ Alternative without `make`: `bash scripts/generate-system-prompt.sh` (generate) 
 # Install skills-ref validator
 npm install -g skills-ref
 
-# Validate all 23 skills
+# Validate all 53 skills
 make validate
 ```
 
