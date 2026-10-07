@@ -1,6 +1,7 @@
 # CHECKSUMS
 Generated: 2026-10-07
 Algorithm: SHA-256
+Version: v0.2.3 — mercure v9.15 portable V-UX slice
 
 ## Verification
 
@@ -28,29 +29,8 @@ so that `sha256sum --check` can parse the file without modification.
 
 ## Optional CI Enhancement
 
-Add the following step to your CI pipeline to detect checksum drift automatically:
-
-```yaml
-- name: Verify skill checksums
-  run: sha256sum --check CHECKSUMS.md
-```
-
-This gates any PR that modifies a skill file without regenerating CHECKSUMS.md.
-
-## Coverage
-
-This file covers:
-- All `skills/*/SKILL.md` files (53 files, all L1/L2/L3 skills)
-- `system-prompt.md` (always-on behavioral block)
-
-Not covered (empty files; content pending — see references/resync-process.md for context):
-- `references/chain-overview.md` — non-empty as of v0.2.0; included below if non-empty
-- `references/workflow-state.md` — non-empty as of v0.2.0; included below if non-empty
-
-Note: `references/chain-overview.md` and `references/workflow-state.md` were verified
-non-empty before this file was generated (M5 filled them). They are excluded from
-CHECKSUMS.md because they are reference documentation, not agent-loaded skill content.
-If you load them as agent context, verify their content independently.
+A future GitHub Actions workflow can run `sha256sum --check CHECKSUMS.md` on every PR
+that touches `skills/` or `system-prompt.md`. Not required for v0.2.x.
 
 ## Files
 
@@ -107,4 +87,4 @@ ec42a1821b2ab127c64b216e9599a5e9150b42eab5ac205318a09bfa4effe495  skills/x-plan/
 569f892d3a70ec2907d442d8931f310e0b1c619512635212b9cc486d873fb0e7  skills/x-research/SKILL.md
 9936f9d8ed914ed36f7a55113aa23b136157de6c724644cd207fc409bb2e634f  skills/x-review/SKILL.md
 947c52013567259cca9330b9c936a5fe3c8f2594f9517ad8a685aaa8d59247a4  skills/x-troubleshoot/SKILL.md
-05e5808f95c9446b425cf70839a0fd0456063e37c6f571be9cd1976a4b8de98d  system-prompt.md
+8c2e156bf7ad7fb48872bcc9da4fbd5d18c0de996595244348713097cbf61e3a  system-prompt.md

@@ -123,7 +123,7 @@ Merged from Mercure + Blackhole. Complete reference for agent compliance checkin
 | Code | Violation | Severity |
 |------|-----------|----------|
 | V-DOC-GOV-01 | Duplicate doc creation | WARN |
-| V-DOC-GOV-02 | Missing lifecycle frontmatter | WARN |
+| V-DOC-GOV-02 | Missing lifecycle frontmatter (general docs: current/deprecated/archived; ADRs: proposed/accepted/rejected/superseded/deprecated) | WARN |
 | V-DOC-GOV-03 | Date-stamped filename | WARN |
 | V-DOC-GOV-04 | Supersede-on-overwrite skipped | WARN |
 
@@ -207,6 +207,29 @@ Merged from Mercure + Blackhole. Complete reference for agent compliance checkin
 | Code | Violation | Severity |
 |------|-----------|----------|
 | V-RULE-01 | Diff violates active owner ruling | BLOCK |
+
+
+## User Experience (V-UX)
+
+Portable UX violation codes from Mercure `v-codes-ux` (synced from mercure v9.15.0).
+Doctrine: `references/information-hierarchy-doctrine.md`, `references/data-encoding-doctrine.md`.
+
+| Code | Violation | Severity |
+|------|-----------|----------|
+| V-UX-01 | Information overload / no progressive disclosure | WARN |
+| V-UX-01a | Flat field dump (sub of V-UX-01) | WARN |
+| V-UX-01b | No summarization above ~7 facts/columns (sub of V-UX-01) | WARN |
+| V-UX-01c | Everything expanded by default (sub of V-UX-01) | WARN |
+| V-UX-01d | Buried primary info (sub of V-UX-01) | WARN |
+| V-UX-01e | Deprecated data at equal prominence (sub of V-UX-01) | WARN |
+| V-UX-02 | Horizontal-scrollbar overflow at a declared display target | BLOCK |
+| V-UX-03 | Visual Evidence section missing from review report (or missing unavailability statement) | WARN |
+| V-UX-04 | Accessibility baseline violation (landmarks, headings, accessible name, keyboard focus, WCAG AA contrast) | BLOCK |
+| V-UX-04a | Colour-only meaning (sub of V-UX-04) | WARN |
+| V-UX-05 | Misleading data encoding (non-zero baseline on length encodings; magnitude without unit/period/population; inconsistent precision) | BLOCK |
+| V-UX-06 | Theme parity failure (illegible/invisible at non-default scheme when both light and dark are declared) | WARN |
+| V-UX-07 | Motion discipline (animation gates reading, or non-trivial motion lacks prefers-reduced-motion) | WARN |
+| V-UX-08 | Visual anti-slop (chrome without meaning: nested cards, borders repairing hierarchy, decorative glass/gradients, metric-box grids) | WARN |
 
 ## Extension Tax
 

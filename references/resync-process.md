@@ -176,12 +176,21 @@ Cursor, Copilot, or any other agent — not just Claude Code.
 
 ## Deferred Adaptations
 
-_No deferred adaptations at v0.2.0 — all 53 skills have been ported or authored
-client-neutrally during M1–M5._
+Add entries here when a mercure change cannot be fully adapted.
 
-Add entries here when a mercure change cannot be fully adapted:
+| Date | Skill / area | Mercure change | Reason deferred | Resolution target |
+|------|--------------|----------------|-----------------|-------------------|
+| 2026-10-07 | `x-test-feature` (new) | Live dest/staging AC walk via playwright + chrome-devtools MCP | Heavy MCP/`AskUserQuestion`/mercure-context coupling; F0 bar fails for portable clients | Port abstract AC-walk skill when a client-neutral browser evidence pattern exists |
+| 2026-10-07 | L3 workflow skills (`x-auto`, `x-review`, `x-analyze`, …) | Small mercure v9.12→v9.15 deltas (chaining, After Completion, Visual Evidence wiring) | Mostly CC tooling / verify.sh / slash-command glue; portable behavioral core already present | Selective (c) syncs per skill when a delta is behavioral-only |
+| 2026-10-07 | `V-CHAIN-01` / workflow protocol | After Completion + AskUserQuestion routing | Claude Code chaining contract; no portable equivalent | Keep mercure-only until a client-neutral chaining note is designed |
+| 2026-10-07 | `mercure-doc-governance.md` path-scope frontmatter | `paths: documentation/**` + ADR status vocabulary | Rule file is CC path-scoped; portable piece folded into `V-DOC-GOV-02` note | Optional lite `doc-governance` knowledge skill later |
 
-```
-| Date | Skill | Mercure change | Reason deferred | Resolution target |
-|------|-------|---------------|-----------------|-------------------|
-```
+### Sync log — mercure v9.12.0 → v9.15.0 (portable slice)
+
+Applied in base-skills (this release):
+
+- `references/vcodes.md` — full `V-UX-01`…`V-UX-08` (+ subcodes) + ADR status note on `V-DOC-GOV-02`
+- `references/information-hierarchy-doctrine.md` — new
+- `references/data-encoding-doctrine.md` — new (feeds `V-UX-05`)
+
+Skipped (CC / MCP / hooks / git redirects / verify.sh): see Deferred Adaptations above.
