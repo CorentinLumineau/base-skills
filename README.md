@@ -18,14 +18,14 @@ description: 53 skills for AI coding agents — 17 always-on behavioural princip
 Pin to a verified release to prevent unvetted updates from reaching your agents:
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.1
+npx skills add CorentinLumineau/base-skills@v0.2.2
 ```
 
 Individual skills at a pinned version:
 
 ```bash
-npx skills add CorentinLumineau/base-skills@v0.2.1 --skill pareto-focus
-npx skills add CorentinLumineau/base-skills@v0.2.1 --skill review-gate --skill naming --skill solid-gate
+npx skills add CorentinLumineau/base-skills@v0.2.2 --skill pareto-focus
+npx skills add CorentinLumineau/base-skills@v0.2.2 --skill review-gate --skill naming --skill solid-gate
 ```
 
 Verify integrity after install (see `CHECKSUMS.md`):
@@ -55,7 +55,7 @@ Skills are installed to `.agents/skills/<name>/SKILL.md` per the agentskills.io 
 
 | Client | Install method | Notes |
 |--------|---------------|-------|
-| Claude Code | `npx skills add CorentinLumineau/base-skills@v0.2.1` or copy `system-prompt.md` into `CLAUDE.md` | Full skill loading supported |
+| Claude Code | `npx skills add CorentinLumineau/base-skills@v0.2.2` or copy `system-prompt.md` into `CLAUDE.md` | Full skill loading supported |
 | Cursor | Copy `system-prompt.md` into system instructions | On-demand skills: paste SKILL.md into context |
 | Windsurf | Copy `system-prompt.md` into system instructions | On-demand skills: paste SKILL.md into context |
 | GitHub Copilot | Copy `system-prompt.md` into `.github/copilot-instructions.md` | On-demand skills: reference SKILL.md manually |
@@ -184,7 +184,7 @@ Load a knowledge skill when the agent needs deep domain expertise for a specific
 
 ## Replica Relationship
 
-**mercure** (in the `ccsetup` repository) is the canonical SSOT: a full-featured Claude Code
+**mercure** (`CorentinLumineau/mercure`) is the canonical SSOT: a full-featured Claude Code
 plugin with 70+ skills, 11 agents, 5 MCP servers, hooks, and CC-specific primitives
 (`TaskCreate`, MCP resources, worktree isolation, slash commands).
 

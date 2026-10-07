@@ -4,9 +4,10 @@
 
 | Version | Security fixes |
 |---------|---------------|
-| `v0.2.1` (current) | Yes |
-| `v0.2.0` | No — upgrade to `v0.2.1` (ships broken `CHECKSUMS.md` and no `LICENSE`) |
-| `v0.1.x` and earlier | No — upgrade to `v0.2.1` |
+| `v0.2.2` (current) | Yes |
+| `v0.2.1` | No — upgrade to `v0.2.2` (pins lagged behind Aug 2026 principles merge) |
+| `v0.2.0` | No — upgrade to `v0.2.2` (ships broken `CHECKSUMS.md` and no `LICENSE`) |
+| `v0.1.x` and earlier | No — upgrade to `v0.2.2` |
 
 This repository contains plain Markdown skill files injected into AI agent system prompts.
 The threat model is **content tampering and prompt injection**, not software CVEs in compiled
@@ -63,7 +64,7 @@ attack surfaces are:
 
 | Threat | Category | Control |
 |--------|----------|---------|
-| Skill content modified in transit (CDN or registry) | Tampering | `CHECKSUMS.md` SHA-256 per file; pinned `@v0.2.1` install |
+| Skill content modified in transit (CDN or registry) | Tampering | `CHECKSUMS.md` SHA-256 per file; pinned `@v0.2.2` install |
 | `CHECKSUMS.md` tampered alongside skill files | Tampering | Pin `CHECKSUMS.md` hash in CI; future: GPG-signed releases |
 | Adversarial instructions injected into a skill file | Prompt injection | Code review gate on all PRs; no auto-merge |
 
@@ -83,7 +84,7 @@ The reporter will be credited in the advisory unless they request otherwise.
 
 ## Future Enhancements
 
-The following controls are planned but not yet implemented for `v0.2.1`:
+The following controls are planned but not yet implemented for `v0.2.2`:
 
 - **GPG-signed releases** — each tag will include a detached `.asc` signature; consumers
   can verify the tag was created by the maintainer's key.

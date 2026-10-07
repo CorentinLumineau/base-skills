@@ -2,7 +2,7 @@
 
 ## Replica Relationship
 
-**mercure** (in `ccsetup`) is the canonical SSOT: a full-featured Claude Code plugin with
+**mercure** (`CorentinLumineau/mercure`) is the canonical SSOT: a full-featured Claude Code plugin with
 72+ skills, 11 agents, 5 MCP servers, hooks, and CC-specific primitives (TaskCreate, MCP
 resources, worktree isolation, etc.).
 
@@ -34,7 +34,7 @@ counterpart in `base-skills/skills/`.
      `WorktreeCreate`, slash commands (`/x-implement`, etc.).
    - Remove `allowed-tools:`, `disallowedTools:`, and `isolation:` frontmatter keys.
    - Keep frontmatter keys: `name`, `description`, `triggers`, `on-demand: true`.
-3. Verify the skill self-describes its purpose without requiring knowledge of ccsetup.
+3. Verify the skill self-describes its purpose without requiring knowledge of the mercure plugin.
 4. Add a row for the new skill in `README.md` under the appropriate L2 domain section.
 5. Regenerate `CHECKSUMS.md` (see step 8 below).
 6. Run `make validate-manual` to confirm no spec violations.
